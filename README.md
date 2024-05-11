@@ -4,33 +4,32 @@ This project provides a series of scripts designed to convert a PDF file into im
 
 **Setup Instructions**
 
-google-cloud-translate for translating text using Google Cloud's Translation API.
-Install the remaining necessary Python libraries using pip
+Install google-cloud-translate for translating text using Google Cloud's Translation API. 
+pip install google-cloud-translate
+
+Install the remaining necessary Python libraries using pip, based on the errors which show up.
 
 
 **Google Cloud Credentials:**
 
 To use the Google Translate API, you need to set up a Google Cloud project and enable the Google Cloud Translation API.
-Go to the Google Cloud Console (https://console.cloud.google.com/).
-Create a new project or select an existing one.
-Navigate to "APIs & Services" > "Dashboard" and enable the "Cloud Translation API".
-Go to "APIs & Services" > "Credentials" and click "Create Credentials" to generate a new service account key.
-Download the JSON key file. This file contains your credentials.
-Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the JSON key file. This allows the Google Cloud SDK to authenticate your requests. You can set this variable in your shell by adding the following line to your .bashrc or .zshrc:
+1. Go to the Google Cloud Console (https://console.cloud.google.com/).
+2. Create a new project or select an existing one.
+3. Navigate to "APIs & Services" > "Dashboard" and enable the "Cloud Translation API".
+4. Go to "APIs & Services" > "Credentials" and click "Create Credentials" to generate a new service account key.
+5. Download the JSON key file. This file contains your credentials.
+6. Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the JSON key file. This allows the Google Cloud SDK to authenticate your requests.
+   export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/credentials-file.json"
 
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/credentials-file.json"
 
-**Convert PDF to Images**
-
-This script takes a PDF file as an input and converts each page into an image.
-Run the script by passing the path to the PDF file:
+The **pdfTranslate.sh** script takes a PDF file as an input and converts each page into an image.
+Run this script by passing the path to the PDF file:
 
 **bash pdfTranslate.sh path_to_your_pdf.pdf**
 
 **Translate Images and Compile Translations:**
 
-After converting the PDF to images, the script automatically calls the translation script which uses OCR (Optical Character Recognition) to extract text from images and translates it using Google Translate.
-The translated texts are then compiled into a single file, with a "translated_" prefix and name of the original PDF.
+After converting the PDF to images, the script automatically calls the translation script which uses OCR (Optical Character Recognition) to extract text from images and translates it using Google Translate. The translated texts are then compiled into a single file, with a "translated_" prefix and name of the original PDF.
 
 bookToImageBatch.py: Converts the PDF document into a series of images stored in an output folder.
 bookImagesTranslator.py: Processes the images to extract text and translates it using the Google Cloud Translation API.
