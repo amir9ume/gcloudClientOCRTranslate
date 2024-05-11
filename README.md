@@ -20,12 +20,12 @@ Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the J
 
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/credentials-file.json"
 
-**Convert PDF to Images:**
+**Convert PDF to Images**
 
 This script takes a PDF file as an input and converts each page into an image.
 Run the script by passing the path to the PDF file:
 
-bash pdfTranslate.sh path_to_your_pdf.pdf
+**bash pdfTranslate.sh path_to_your_pdf.pdf**
 
 **Translate Images and Compile Translations:**
 
