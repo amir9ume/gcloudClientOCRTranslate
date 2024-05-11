@@ -30,7 +30,7 @@ Run the script by passing the path to the PDF file:
 **Translate Images and Compile Translations:**
 
 After converting the PDF to images, the script automatically calls the translation script which uses OCR (Optical Character Recognition) to extract text from images and translates it using Google Translate.
-The translated texts are then compiled into a single file, and the original combined_translations.txt is renamed to reflect the name of the original PDF, but with a "translated_" prefix.
+The translated texts are then compiled into a single file, with a "translated_" prefix and name of the original PDF.
 
 bookToImageBatch.py: Converts the PDF document into a series of images stored in an output folder.
 bookImagesTranslator.py: Processes the images to extract text and translates it using the Google Cloud Translation API.
